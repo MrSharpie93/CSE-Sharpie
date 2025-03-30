@@ -18,6 +18,9 @@
 ; - BitmasksPointers (see gfx/pokemon/bitmask_pointers.asm)
 ; - FramesPointers (see gfx/pokemon/frame_pointers.asm)
 ; - EZChat_SortedPokemon (see data/pokemon/ezchat_order.asm)
+; - FirstEvoStages (see data/pokemon/first_stages.asm)
+; - MonMenuIconPals (see data/pokemon/menu_icon_pals.asm)
+; - PokemonBodyData (see data/pokemon/body_data.asm)
 	const_def 1
 	const BULBASAUR  ; 01
 	const IVYSAUR    ; 02
@@ -291,7 +294,7 @@ DEF HOENN_POKEMON EQU const_value
 	const BEAUTIFLY  ; 10b
 	const CASCOON    ; 10c
 	const DUSTOX     ; 10d
-	const LOTAD	     ; 10e
+	const LOTAD	 ; 10e
 	const LOMBRE     ; 10f
 	const LUDICOLO   ; 110
 	const SEEDOT     ; 111
@@ -301,7 +304,7 @@ DEF HOENN_POKEMON EQU const_value
 	const SWELLOW    ; 115
 	const WINGULL    ; 116
 	const PELIPPER   ; 117
-	const RALTS	     ; 118
+	const RALTS	 ; 118
 	const KIRLIA     ; 119
 	const GARDEVOIR  ; 11a
 	const SURSKIT    ; 11b
@@ -408,6 +411,235 @@ DEF HOENN_POKEMON EQU const_value
 	const RAYQUAZA   ; 180
 	const JIRACHI    ; 181
 	const DEOXYS     ; 182
+;DEF SINNOH_POKEMON EQU const_value
+;	const SHINX
+;	const LUXIO
+;	const LUXRAY
+;	const BUDEW
+;	const ROSERADE
+;	const CRANIDOS
+;	const RAMPARDOS
+;	const SHIELDON
+;	const BASTIODON
+;	const COMBEE
+;	const VESPIQUEN
+;	const SHELLOS
+;	const GASTRODON
+;	const AMBIPOM
+;	const DRIFLOON
+;	const DRIFBLIM
+;	const MISMAGIUS
+;	const HONCHKROW
+;	const CHINGLING
+;	const BONSLY
+;	const MIME_JR
+;	const HAPPINY
+;	const SPIRITOMB
+;	const MUNCHLAX
+;	const RIOLU
+;	const LUCARIO
+;	const SKORUPI
+;	const DRAPION
+;	const CROAGUNK
+;	const TOXICROAK
+;	const MANTYKE
+;	const SNOVER
+;	const ABOMASNOW
+;	const WEAVILE
+;	const MAGNEZONE
+;	const LICKILICKY
+;	const RHYPERIOR
+;	const TANGROWTH
+;	const ELECTIVIRE
+;	const MAGMORTAR
+;	const TOGEKISS
+;	const YANMEGA
+;	const LEAFEON
+;	const GLACEON
+;	const GLISCOR
+;	const MAMOSWINE
+;	const PORYGONZ
+;	const GALLADE
+;	const PROBOPASS
+;	const DUSKNOIR
+;	const FROSLASS
+;	const UXIE
+;	const MESPRIT
+;	const AZELF
+;	const DIALGA
+;	const PALKIA
+;	const HEATRAN
+;	const REGIGIGAS
+;	const GIRATINA
+;	const CRESSELIA
+;	const PHIONE
+;	const MANAPHY
+;	const DARKRAI
+;	const SHAYMIN
+;	const ARCEUS
+;DEF UNOVA_POKEMON EQU const_value
+;	const PURRLOIN
+;	const LIEPARD
+;	const MUNNA
+;	const MUSHARNA
+;	const ROGGENROLA
+;	const BOLDORE
+;	const GIGALITH
+;	const WOOBAT
+;	const SWOOBAT
+;	const VENIPEDE
+;	const WHIRLIPEDE
+;	const SCOLIPEDE
+;	const COTTONEE
+;	const WHIMSICOTT
+;	const SANDILE
+;	const KROKOROK
+;	const KROOKODILE
+;	const SCRAGGY
+;	const SCRAFTY
+;	const SIGILYPH
+;	const JOLTIK
+;	const GALVANTULA
+;	const KLINK
+;	const KLANG
+;	const KLINKLANG
+;	const ELGYEM
+;	const BEHEEYEM
+;	const LITWICK
+;	const LAMPENT
+;	const CHANDELURE
+;	const GOLETT
+;	const GOLURK
+;	const PAWNIARD
+;	const BISHARP
+;	const DEINO
+;	const ZWEILOUS
+;	const HYDREIGON
+;	const LARVESTA
+;	const VOLCARONA
+;DEF KALOS_POKEMON EQU const_value
+;	const LITLEO
+;	const PYROAR
+;	const FLABEBE
+;	const FLOETTE
+;	const FLORGES
+;	const ESPURR
+;	const MEOWSTIC
+;	const INKAY
+;	const MALAMAR
+;	const HELIOPTILE
+;	const HELIOLISK
+;	const TYRUNT
+;	const TYRANTRUM
+;	const AMAURA
+;	const AURORUS
+;	const SYLVEON
+;	const HAWLUCHA
+;	const GOOMY
+;	const SLIGGOO
+;	const GOODRA
+;	const NOIBAT
+;	const NOIVERN
+;DEF ALOLA_POKEMON EQU const_value
+;	const RATTATA_A
+;	const RATICATE_A
+;	const RAICHU_A
+;	const SANDSHREW_A
+;	const SANDSLASH_A
+;	const VULPIX_A
+;	const NINETALES_A
+;	const MEOWTH_A
+;	const PERSIAN_A
+;	const DIGLETT_A
+;	const DUGTRIO_A
+;	const MEOWTH_A
+;	const PERSIAN_A
+;	const GEODUDE_A
+;	const GRAVELER_A
+;	const GOLEM_A
+;	const GRIMER_A
+;	const MUK_A
+;	const EXEGGUTOR_A
+;	const MAROWAK_A
+;	const SALANDIT
+;	const SALAZZLE
+;	const TYPE_NULL
+;	const SILVALLY
+;	const MIMIKYU
+;	const DHELMISE
+;	const MELTAN
+;	const MELMETAL
+;DEF GALAR_PLUS_POKEMON EQU const_value
+;	const MEOWTH_G
+;	const PERRSERKER
+;	const GROWLITHE_H
+;	const ARCANINE_H
+;	const PONYTA_G
+;	const RAPIDASH_G
+;	const SLOWPOKE_G
+;	const SLOWBRO_G
+;	const SLOWKING_G
+;	const FARFETCH_D_G
+;	const SIRFETCH_D
+;	const VOLTORB_H
+;	const ELECTRODE_H
+;	const WEEZING_G
+;	const MR__MIME_G
+;	const MR__RIME
+;	const TAUROS_PC
+;	const TAUROS_PB
+;	const TAUROS_PA
+;	const ARTICUNO_G
+;	const ZAPDOS_G
+;	const MOLTRES_G
+;	const TYPHLOSION_H
+;	const WOOPER_P
+;	const CLODSIRE
+;	const QWILFISH_H
+;	const OVERQWIL
+;	const SNEASEL_H
+;	const SNEASLER
+;	const CORSOLA_G
+;	const CURSOLA
+;	const ZIGZAGOON_G
+;	const LINOONE_G
+;	const OBSTAGOON
+;	const SLIGGOO_H
+;	const GOODRA_H
+;	const ROOKIDEE
+;	const CORVSQUIRE
+;	const CORVKNIGHT
+;	const IMPIDIMP
+;	const MORGREM
+;	const GRIMMSNARL
+;	const SNOM
+;	const FROSMOTH
+;	const INDEEDEE
+;	const MORPEKO
+;	const DRACOZOLT
+;	const ARCTOZOLT
+;	const DRACOVISH
+;	const ARCTOVISH
+;	const DREEPY
+;	const DRAKLOAK
+;	const DRAGAPULT
+;	const REGIELEKI
+;	const REGIDRAGO
+;	const WYRDEER
+;	const KLEAVOR
+;	const URSALUNA
+;	const TOEDSCOOL
+;	const TOEDSCRUEL
+;	const WIGLETT
+;	const WUGTRIO
+;	const VAROOM
+;	const REVAVROOM
+;	const ANNIHILAPE
+;	const FARIGIRAF
+;	const DUDUNSPARCE
+;	const KINGAMBIT
+;	const GIMMIGHOUL
+;	const GHOLDENGO
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3
