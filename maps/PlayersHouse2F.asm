@@ -75,6 +75,7 @@ if DEF(_DEBUG)
 	giveitem LEAF_STONE, 10
 	giveitem MOON_STONE, 10
 	giveitem SUN_STONE, 10
+	giveitem EVERSTONE, 10
 	giveitem BERRY, 10
 	giveitem GOLD_BERRY, 10
 	giveitem MINT_BERRY, 10
@@ -164,13 +165,12 @@ if DEF(_DEBUG)
 	; givepokemove HEADBUTT,   wPartyMon3, 2
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke NINJASK, 75
-	givepokemove QUICK_ATTACK,  wPartyMon1, 0
-	givepokemove SNATCH,  wPartyMon1, 1
-	givepokemove WHIRLWIND,  wPartyMon1, 2
-	givepokemove VITAL_THROW,  wPartyMon1, 3
-	givepoke NINCADA, 50
-	givepoke WURMPLE, 50
+	givepoke EEVEE, 19
+	givepoke AZURILL, 19
+	givepoke GOLBAT, 19
+	givepoke NINCADA, 19
+	givepoke WURMPLE, 19
+	givepoke WURMPLE, 19
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1
